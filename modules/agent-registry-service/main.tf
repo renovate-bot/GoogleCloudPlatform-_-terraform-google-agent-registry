@@ -15,7 +15,7 @@
  */
 
 resource "google_agent_registry_service" "this" {
-  provider   = google-beta
+  provider   = google-nightly
   location   = var.location
   service_id = var.service_id
   project = project_id
