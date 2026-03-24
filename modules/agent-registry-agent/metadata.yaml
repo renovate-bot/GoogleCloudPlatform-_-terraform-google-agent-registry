@@ -55,6 +55,12 @@ spec:
       - level: PROJECT
         roles:
           - roles/agentregistry.viewer
+          - roles/iam.serviceAccountUser
+          - roles/config.agent
+          - roles/storage.admin
+          - roles/networkservices.admin
+          - roles/networksecurity.admin
+          - roles/serviceusage.serviceUsageAdmin
     services:
       - agentregistry.googleapis.com
       - apphub.googleapis.com
