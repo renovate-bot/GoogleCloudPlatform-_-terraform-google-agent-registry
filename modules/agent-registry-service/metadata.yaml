@@ -84,13 +84,17 @@ spec:
         description: The timestamp when the resource was updated.
   requirements:
     roles:
-      - level: Project
+      - level: PROJECT
         roles:
-          - roles/owner
+          - roles/agentregistry.admin
+          - roles/iam.serviceAccountUser
     services:
+      - agentregistry.googleapis.com
+      - apphub.googleapis.com
+      - aiplatform.googleapis.com
+      - serviceusage.googleapis.com
       - cloudresourcemanager.googleapis.com
       - storage-api.googleapis.com
-      - serviceusage.googleapis.com
     providerVersions:
       - source: hashicorp/google-beta
         version: ">= 7.21.0"

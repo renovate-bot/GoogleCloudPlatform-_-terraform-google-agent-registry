@@ -52,13 +52,15 @@ spec:
         description: The timestamp when the endpoint was last updated.
   requirements:
     roles:
-      - level: Project
+      - level: PROJECT
         roles:
-          - roles/owner
+          - roles/agentregistry.viewer
     services:
+      - agentregistry.googleapis.com
+      - apphub.googleapis.com
       - cloudresourcemanager.googleapis.com
-      - storage-api.googleapis.com
       - serviceusage.googleapis.com
+      - storage-api.googleapis.com
     providerVersions:
       - source: hashicorp/google-beta
         version: ">= 7.21.0"
