@@ -43,3 +43,8 @@ output "endpoint_update_time" {
   description = "The timestamp when the endpoint was last updated."
   value       = data.google_agent_registry_endpoint.default.update_time
 }
+
+output "endpoint_id" {
+  description = "The enpoint id."
+  value       = data.google_agent_registry_endpoint.default.endpoint_id
+}
