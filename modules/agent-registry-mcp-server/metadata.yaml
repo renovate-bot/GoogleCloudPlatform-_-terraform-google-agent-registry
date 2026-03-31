@@ -11,7 +11,7 @@ spec:
       repo: https://github.com/vandnagarggoogle/terraform-google-agent-registry.git
       sourceType: git
       dir: /modules/agent-registry-mcp-server
-    version: 0.0.8
+    version: 0.0.9
     actuationTool:
       flavor: Terraform
       version: ">= 0.13"
@@ -37,6 +37,13 @@ spec:
       - name: mcp_server_id
         description: The system-generated ID for an MCP server (e.g., agentregistry-0000...).
         varType: string
+        connections:
+          - source:
+              source: github.com/vandnagarggoogle/terraform-google-agent-registry//modules/agent-registry-service
+              version: ">= v0.0.8"
+            spec:
+              outputExpr: id
+              inputPath: mcp_server_id
     outputs:
       - name: mcp_server_attributes
         description: Attributes associated with the MCP Server.
