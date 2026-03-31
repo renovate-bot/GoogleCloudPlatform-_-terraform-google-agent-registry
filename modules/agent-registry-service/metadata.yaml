@@ -50,7 +50,7 @@ spec:
             }))
         defaultValue: []
         connections:
-        - source:
+          - source:
               source: github.com/vandnagarggoogle/terraform-google-agent-registry//modules/agent-registry-endpoint
               version: ">= v0.0.8"
             spec:
