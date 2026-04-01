@@ -14,6 +14,28 @@
  * limitations under the License.
  */
 
+
+locals {
+  # The union of all services required by the registry ecosystem
+  required_services = [
+    "agentregistry.googleapis.com",
+    "apphub.googleapis.com",
+    "aiplatform.googleapis.com",
+    "serviceusage.googleapis.com",
+    "cloudresourcemanager.googleapis.com",
+    "storage-api.googleapis.com"
+  ]
+}
+
+# Enable the required APIs in the test project
+resource "google_project_service" "test_project_apis" {
+  for_each                   = toset(local.required_services)
+  project                    = var.project_id
+  service                    = each.value
+  disable_on_destroy         = false
+  disable_dependent_services = true
+}
+
 module "project" {
   source  = "terraform-google-modules/project-factory/google"
   version = "~> 17.0"
