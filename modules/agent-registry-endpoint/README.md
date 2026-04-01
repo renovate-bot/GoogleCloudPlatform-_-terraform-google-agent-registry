@@ -24,6 +24,7 @@ This data source supports filtering by `displayName` or `endpoint_id` to resolve
 | endpoint\_create\_time | The timestamp when the endpoint was created. |
 | endpoint\_description | The description of the endpoint. |
 | endpoint\_display\_name | The display name of the endpoint. |
+| endpoint\_id | The enpoint id. |
 | endpoint\_interfaces | The connection details (URL and protocol binding) for the Endpoint. |
 | endpoint\_update\_time | The timestamp when the endpoint was last updated. |
 

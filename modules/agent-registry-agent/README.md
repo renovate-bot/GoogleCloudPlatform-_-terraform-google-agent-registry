@@ -22,6 +22,7 @@ Use this module to resolve the SPIFFE ID and endpoint details for Agent-to-Agent
 |------|-------------|
 | agent\_display\_name | The display name of the Agent. |
 | agent\_framework | The OSS agent framework used to develop the agent. |
+| agent\_id | The agent id. |
 | agent\_protocols | The connection details and interfaces for the Agent. |
 | agent\_skills | The list of skills and capabilities defined for the Agent. |
 | agent\_version | The version of the Agent. |

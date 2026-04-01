@@ -16,15 +16,16 @@
 
 
 locals {
-  # The union of all services required by the registry ecosystem
-  required_services = [
-    "agentregistry.googleapis.com",
-    "apphub.googleapis.com",
-    "aiplatform.googleapis.com",
-    "serviceusage.googleapis.com",
-    "cloudresourcemanager.googleapis.com",
-    "storage-api.googleapis.com"
-  ]
+  per_module_services = {
+    agent-registry-service = [
+      "agentregistry.googleapis.com",
+      "apphub.googleapis.com",
+      "aiplatform.googleapis.com",
+      "serviceusage.googleapis.com",
+      "cloudresourcemanager.googleapis.com",
+      "storage-api.googleapis.com"
+    ],
+  }
 }
 
 # Enable the required APIs in the test project

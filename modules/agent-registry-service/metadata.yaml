@@ -1,3 +1,17 @@
+# Copyright 2026 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 apiVersion: blueprints.cloud.google.com/v1alpha1
 kind: BlueprintMetadata
 metadata:
@@ -11,7 +25,7 @@ spec:
       repo: https://github.com/vandnagarggoogle/terraform-google-agent-registry.git
       sourceType: git
       dir: /modules/agent-registry-service
-    version: 0.0.17
+    version: 0.0.1
     actuationTool:
       flavor: Terraform
       version: ">= 0.13"
@@ -19,8 +33,14 @@ spec:
     icon: assets/icon.png
   content:
     examples:
-      - name: simple_example
-        location: examples/simple_example
+      - name: agent-registry-agent
+        location: examples/agent-registry-agent
+      - name: agent-registry-endpoint
+        location: examples/agent-registry-endpoint
+      - name: agent-registry-mcp-server
+        location: examples/agent-registry-mcp-server
+      - name: agent-registry-service
+        location: examples/agent-registry-service
   interfaces:
     variables:
       - name: project_id
@@ -55,24 +75,20 @@ spec:
               version: ">= v0.0.8"
             spec:
               outputExpr: endpoint_interfaces
-          # Discovery: From existing MCP Server
           - source:
               source: github.com/vandnagarggoogle/terraform-google-agent-registry//modules/agent-registry-mcp-server
               version: ">= v0.0.8"
             spec:
               outputExpr: mcp_server_interfaces
-          # Infra: From Global Load Balancer
           - source:
               source: github.com/terraform-google-modules/terraform-google-lb-http//modules/backend
             spec:
               outputExpr: "{\"url\": apphub_service_uri[0].service_uri, \"protocol_binding\": \"HTTP_JSON\"}"
-          # Infra: From Private Service Connect Producer
           - source:
               source: github.com/terraform-google-modules/terraform-google-network//modules/private-service-connect-producer
               version: ">= v15.0.0"
             spec:
               outputExpr: "{\"url\": service_attachment_self_link, \"protocol_binding\": \"HTTP_JSON\"}"
-          # Infra: From Cloud Function
           - source:
               source: github.com/GoogleCloudPlatform/terraform-google-cloud-functions
             spec:
@@ -94,7 +110,7 @@ spec:
               source: github.com/vandnagarggoogle/terraform-google-agent-registry//modules/agent-registry-agent
               version: ">= v0.0.8"
             spec:
-              outputExpr: '{"type": "A2A_AGENT_CARD", "content": agent_id}'
+              outputExpr: "{\"type\": \"A2A_AGENT_CARD\", \"content\": agent_id}"
       - name: mcp_server_spec
         description: The spec of the MCP Server. Mutually exclusive with agent_spec and endpoint_spec.
         varType: |-
@@ -112,7 +128,7 @@ spec:
               source: github.com/vandnagarggoogle/terraform-google-agent-registry//modules/agent-registry-mcp-server
               version: ">= v0.0.8"
             spec:
-              outputExpr: '{"type": "TOOL_SPEC", "content": mcp_server_id}'
+              outputExpr: "{\"type\": \"TOOL_SPEC\", \"content\": mcp_server_id}"
       - name: endpoint_spec
         description: The spec of the Endpoint. Mutually exclusive with agent_spec and mcp_server_spec.
         varType: |-
@@ -129,7 +145,7 @@ spec:
               source: github.com/vandnagarggoogle/terraform-google-agent-registry//modules/agent-registry-endpoint
               version: ">= v0.0.8"
             spec:
-              outputExpr: '{"type": "NO_SPEC"}'
+              outputExpr: "{\"type\": \"NO_SPEC\"}"
     outputs:
       - name: agent
         description: Details of the Agent configuration.
@@ -145,9 +161,8 @@ spec:
         description: The timestamp when the resource was updated.
   requirements:
     roles:
-      - level: PROJECT
+      - level: Project
         roles:
-          - roles/agentregistry.admin
           - roles/iam.serviceAccountUser
           - roles/config.agent
           - roles/storage.admin

@@ -1,3 +1,17 @@
+# Copyright 2026 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 apiVersion: blueprints.cloud.google.com/v1alpha1
 kind: BlueprintMetadata
 metadata:
@@ -38,14 +52,25 @@ spec:
       - name: agent-registry-service
         location: modules/agent-registry-service
     examples:
-      - name: simple_example
-        location: examples/simple_example
+      - name: agent-registry-agent
+        location: examples/agent-registry-agent
+      - name: agent-registry-endpoint
+        location: examples/agent-registry-endpoint
+      - name: agent-registry-mcp-server
+        location: examples/agent-registry-mcp-server
+      - name: agent-registry-service
+        location: examples/agent-registry-service
   interfaces: {}
   requirements:
     roles:
       - level: Project
         roles:
-          - roles/owner
+          - roles/iam.serviceAccountUser
+          - roles/config.agent
+          - roles/storage.admin
+          - roles/networkservices.admin
+          - roles/networksecurity.admin
+          - roles/serviceusage.serviceUsageAdmin
     services:
       - cloudresourcemanager.googleapis.com
       - storage-api.googleapis.com
