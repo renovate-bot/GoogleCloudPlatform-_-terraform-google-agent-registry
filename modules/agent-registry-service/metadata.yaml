@@ -71,12 +71,12 @@ spec:
         defaultValue: []
         connections:
           - source:
-              source: github.com/vandnagarggoogle/terraform-google-agent-registry//modules/agent-registry-endpoint
+              source: github.com/GoogleCloudPlatform/terraform-google-agent-registry//modules/agent-registry-endpoint
               version: ">= v0.0.8"
             spec:
               outputExpr: endpoint_interfaces
           - source:
-              source: github.com/vandnagarggoogle/terraform-google-agent-registry//modules/agent-registry-mcp-server
+              source: github.com/GoogleCloudPlatform/terraform-google-agent-registry//modules/agent-registry-mcp-server
               version: ">= v0.0.8"
             spec:
               outputExpr: mcp_server_interfaces
@@ -102,12 +102,12 @@ spec:
             })
         connections:
           - source:
-              source: github.com/vandnagarggoogle/terraform-google-agent-registry//modules/agent-registry-service
+              source: github.com/GoogleCloudPlatform/terraform-google-agent-registry//modules/agent-registry-service
               version: ">= v0.0.8"
             spec:
               outputExpr: agent
           - source:
-              source: github.com/vandnagarggoogle/terraform-google-agent-registry//modules/agent-registry-agent
+              source: github.com/GoogleCloudPlatform/terraform-google-agent-registry//modules/agent-registry-agent
               version: ">= v0.0.8"
             spec:
               outputExpr: "{\"type\": \"A2A_AGENT_CARD\", \"content\": agent_id}"
@@ -120,12 +120,12 @@ spec:
             })
         connections:
           - source:
-              source: github.com/vandnagarggoogle/terraform-google-agent-registry//modules/agent-registry-service
+              source: github.com/GoogleCloudPlatform/terraform-google-agent-registry//modules/agent-registry-service
               version: ">= v0.0.8"
             spec:
               outputExpr: mcp_server
           - source:
-              source: github.com/vandnagarggoogle/terraform-google-agent-registry//modules/agent-registry-mcp-server
+              source: github.com/GoogleCloudPlatform/terraform-google-agent-registry//modules/agent-registry-mcp-server
               version: ">= v0.0.8"
             spec:
               outputExpr: "{\"type\": \"TOOL_SPEC\", \"content\": mcp_server_id}"
@@ -137,12 +137,12 @@ spec:
             })
         connections:
           - source:
-              source: github.com/vandnagarggoogle/terraform-google-agent-registry//modules/agent-registry-service
+              source: github.com/GoogleCloudPlatform/terraform-google-agent-registry//modules/agent-registry-service
               version: ">= v0.0.8"
             spec:
               outputExpr: endpoint
           - source:
-              source: github.com/vandnagarggoogle/terraform-google-agent-registry//modules/agent-registry-endpoint
+              source: github.com/GoogleCloudPlatform/terraform-google-agent-registry//modules/agent-registry-endpoint
               version: ">= v0.0.8"
             spec:
               outputExpr: "{\"type\": \"NO_SPEC\"}"
