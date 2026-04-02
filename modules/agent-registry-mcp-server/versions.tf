@@ -1,5 +1,5 @@
 /**
- * Copyright 2021 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,19 +15,32 @@
  */
 
 terraform {
-  required_version = ">= 0.13"
+  required_version = ">= 1.3"
+
   required_providers {
+    google = {
+      source  = "hashicorp/google"
+      version = ">= 6.6.0, < 8"
+    }
     google-beta = {
       source  = "hashicorp/google-beta"
-      version = ">= 7.21.0"
+      version = ">= 6.6.0, < 8"
     }
+    # Match the google-nightly version used in the root versions.tf
     google-nightly = {
       source  = "hashicorp/google-nightly"
-      version = "2026.3.23-0.0.3"
+      version = "2026.3.26-7.25.0"
     }
   }
 
-  provider_meta "google" {
-    module_name = "blueprints/terraform/agent-registry/v0.0.1"
+    provider_meta "google" {
+    module_name = "blueprints/terraform/terraform-google-agent-registry:agent-registry-mcp-server/v0.1.0"
+  }
+  provider_meta "google-beta" {
+    module_name = "blueprints/terraform/terraform-google-agent-registry:agent-registry-mcp-server/v0.1.0"
+  }
+
+  provider_meta "google-nightly" {
+    module_name = "blueprints/terraform/terraform-google-agent-registry:agent-registry-mcp-server/v0.1.0"
   }
 }

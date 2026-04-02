@@ -1,24 +1,42 @@
 # terraform-google-agent-registry
 
 ## Description
+The Agent Registry Service is a management plane API that acts as a unified catalog and single source of truth for AI agents and Model Context Protocol (MCP) servers. It simplifies and automates the management of agent definitions and tool specifications, allowing developers to securely discover and orchestrate tool usage within the Agentic ecosystem.
+
+This module provides support for:
+- Provisioning and managing Agent Registry Services.
+- Retrieving agent metadata and functional capabilities.
+- Secure discovery and retrieval of MCP server tool definitions.
+- Streamlining the fetching of secure endpoint specifications.
+
 ### Tagline
 Terraform module for managing Google Cloud Agent Registry
-
 ### Detailed
-This module was generated from [terraform-google-module-template](https://github.com/terraform-google-modules/terraform-google-module-template/), which by default generates a module that simply creates a GCS bucket. As the module develops, this README should be updated.
+This module simplifies and automates the management of AI agent definitions and Model Context Protocol (MCP) servers to assert tool capabilities and manage secure discovery. It facilitates the orchestrated usage of tools within the Agentic ecosystem by providing a single source of truth for all deployed agents.
 
-The resources/services/activations/deletions that this module will create/trigger are:
-
-- Create a GCS bucket with the provided name
+The resources and data sources that this module will manage include:
+- **Agent Registry Service**: A foundational blueprint for provisioning and managing the Registry lifecycle.
+- **Agent Metadata**: Facilitates the retrieval of functional capabilities for registered agents.
+- **MCP Server Definitions**: Enables the discovery and retrieval of standardized tool definitions.
+- **Secure Endpoints**: Streamlines the fetching of connection specifications for agent execution.
 
 ### PreDeploy
-To deploy this blueprint you must have an active billing account and billing permissions.
+To deploy this blueprint, the following prerequisites must be met in the target Google Cloud project:
+
+1. **Enable APIs**: The `agentregistry.googleapis.com` and `apphub.googleapis.com` APIs must be enabled.
+2. **Permissions**: The service account or user identity provisioning these resources requires the following roles:
+    - **Agent Registry API Admin** (`roles/agentregistry.admin`).
+    - **Service Usage Admin** (`roles/serviceusage.serviceUsageAdmin`) to enable the required APIs.
+3. **Billing**: An active billing account must be linked to the project.
 
 ## Architecture
-![alt text for diagram](https://www.link-to-architecture-diagram.com)
-1. Architecture description step no. 1
-2. Architecture description step no. 2
-3. Architecture description step no. N
+The Agent Registry integrates with several Google Cloud services to provide a secure management boundary for AI agents.
+
+1. **AI Agents**: Registered via Agent Engine to assert functional capabilities.
+2. **MCP Servers**: Standardized tool definitions discovered via the registry catalog.
+3. **Endpoints**: Targets for secure service execution.
+4. **App Hub**: Implemented as a new catalog type to provide application-centric observability.
+
 
 ## Documentation
 - [Hosting a Static Website](https://cloud.google.com/storage/docs/hosting-static-website)
@@ -55,25 +73,11 @@ Functional examples are included in the
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| agent\_spec | The spec of the Agent. Mutually exclusive with mcp\_server\_spec and endpoint\_spec. | <pre>object({<br>    type    = string # NO_SPEC or A2A_AGENT_CARD<br>    content = string # JSON format content<br>  })</pre> | `null` | no |
-| description | The description of the service. | `string` | `null` | no |
-| display\_name | User-defined display name for the Service (max 63 characters). | `string` | `null` | no |
-| endpoint\_spec | The spec of the Endpoint. Mutually exclusive with agent\_spec and mcp\_server\_spec. | <pre>object({<br>    type = string # NO_SPEC<br>  })</pre> | `null` | no |
-| interfaces | The connection details for the Service. | <pre>list(object({<br>    url              = string<br>    protocol_binding = string # JSONRPC, GRPC, or HTTP_JSON<br>  }))</pre> | `[]` | no |
-| location | The location of the resource. | `string` | n/a | yes |
-| mcp\_server\_spec | The spec of the MCP Server. Mutually exclusive with agent\_spec and endpoint\_spec. | <pre>object({<br>    type    = string # NO_SPEC or TOOL_SPEC<br>    content = string # JSON format content<br>  })</pre> | `null` | no |
-| project | The project ID to deploy to. | `string` | n/a | yes |
-| service\_id | The name of the service. | `string` | n/a | yes |
+No inputs.
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| create\_time | The timestamp when the resource was created. |
-| id | The ID of the Agent Registry Service. |
-| update\_time | The timestamp when the resource was updated. |
+No outputs.
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 

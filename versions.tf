@@ -26,21 +26,22 @@ terraform {
       source  = "hashicorp/google-beta"
       version = ">= 6.6.0, < 8"
     }
-    # Match the google-nightly version used in the root versions.tf
+    # Add the google-nightly provider with the latest version
     google-nightly = {
       source  = "hashicorp/google-nightly"
       version = "2026.3.26-7.25.0"
     }
   }
 
-    provider_meta "google" {
-    module_name = "blueprints/terraform/terraform-google-agent-registry:agent-registry-service/v0.1.0"
+  provider_meta "google" {
+    module_name = "blueprints/terraform/terraform-google-agent-registry/v0.1.0"
   }
+
   provider_meta "google-beta" {
-    module_name = "blueprints/terraform/terraform-google-agent-registry:agent-registry-service/v0.1.0"
+    module_name = "blueprints/terraform/terraform-google-agent-registry/v0.1.0"
   }
 
   provider_meta "google-nightly" {
-    module_name = "blueprints/terraform/terraform-google-agent-registry:agent-registry-service/v0.1.0"
+    module_name = "blueprints/terraform/terraform-google-agent-registry/v0.1.0"
   }
 }
