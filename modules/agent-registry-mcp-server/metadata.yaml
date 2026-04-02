@@ -59,7 +59,7 @@ spec:
         varType: string
         connections:
           - source:
-              source: github.com/vandnagarggoogle/terraform-google-agent-registry//modules/agent-registry-service
+              source: github.com/GoogleCloudPlatform/terraform-google-agent-registry//modules/agent-registry-service
               version: ">= v0.0.8"
             spec:
               outputExpr: id
