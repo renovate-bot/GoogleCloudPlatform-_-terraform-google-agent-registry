@@ -15,7 +15,7 @@
  */
 
 module "service_prereq" {
-  source     = "vandnagarggoogle/agent-registry/google//modules/agent-registry-service"
+  source     = "../../modules/agent-registry-service"
   project_id = var.project_id
   location   = "us-central1"
   service_id = "test-endpoint-${var.random_string}"
