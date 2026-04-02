@@ -18,7 +18,7 @@ module "service_prereq" {
   source     = "../../modules/agent-registry-service"
   project_id = var.project_id
   location   = "us-central1"
-  service_id = "test-endpoint-${var.random_string}"
+  service_id = "test-endpoint-abc"
   endpoint_spec = {
     type = "NO_SPEC"
   }
