@@ -51,7 +51,7 @@ spec:
         description: The location of the Agent Registry resource (e.g., us-central1).
         varType: string
         required: true
-        - name: filter
+      - name: filter
         varType: string
         connections:
           - source:
