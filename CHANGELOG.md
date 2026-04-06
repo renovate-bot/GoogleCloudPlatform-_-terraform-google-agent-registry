@@ -8,6 +8,13 @@ and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 This changelog is generated automatically based on [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## [0.1.1](https://github.com/GoogleCloudPlatform/terraform-google-agent-registry/compare/v0.1.0...v0.1.1) (2026-04-06)
+
+
+### Bug Fixes
+
+* removing cyclic dependency ([6b6ae12](https://github.com/GoogleCloudPlatform/terraform-google-agent-registry/commit/6b6ae1246b312b51a681f96feeeca027f909b04d))
+
 ## 0.1.0 (2026-04-02)
 
 
