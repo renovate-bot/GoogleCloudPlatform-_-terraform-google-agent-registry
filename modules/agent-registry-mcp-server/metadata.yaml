@@ -76,6 +76,9 @@ spec:
         description: The connection details (URL and protocol binding) for the MCP Server.
       - name: mcp_server_tools
         description: The list of tools available with the MCP Server, including their names, descriptions, and annotations.
+      - name: mcp_server_urn
+        description: The logical URN of the MCP server.
+        type: string
   requirements:
     roles:
       - level: Project

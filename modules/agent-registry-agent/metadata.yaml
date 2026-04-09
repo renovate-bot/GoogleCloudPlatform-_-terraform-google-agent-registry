@@ -60,6 +60,12 @@ spec:
               version: ">= v0.0.8"
             spec:
               outputExpr: discovery_filter
+          - source:
+              source: github.com/GoogleCloudPlatform/terraform-google-vertex-ai//modules/agent-engine
+              version: ">= v4.0.1"
+            spec:
+              outputExpr: discovery_filter
+              inputPath: filter
       - name: agent_id
         description: The system-generated ID for a registered agent.
         varType: string
@@ -78,6 +84,9 @@ spec:
         description: The version of the Agent.
       - name: last_updated
         description: The last time the agent metadata was updated.
+      - name: agent_urn
+        description: The logical URN of the agent.
+        type: string
   requirements:
     roles:
       - level: Project
