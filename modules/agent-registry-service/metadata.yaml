@@ -72,15 +72,17 @@ spec:
         connections:
           - source:
               source: github.com/terraform-google-modules/terraform-google-lb-http//modules/backend
+              version: ">= 14.2.0"
             spec:
               outputExpr: "{\"url\": apphub_service_uri[0].service_uri, \"protocol_binding\": \"HTTP_JSON\"}"
           - source:
               source: github.com/terraform-google-modules/terraform-google-network//modules/private-service-connect-producer
-              version: ">= v15.0.0"
+              version: ">= 15.0.0"
             spec:
               outputExpr: "{\"url\": service_attachment_self_link, \"protocol_binding\": \"HTTP_JSON\"}"
           - source:
               source: github.com/GoogleCloudPlatform/terraform-google-cloud-functions
+              version: ">= 0.8.0"
             spec:
               outputExpr: "{\"url\": function_uri, \"protocol_binding\": \"HTTP_JSON\"}"
       - name: agent_spec

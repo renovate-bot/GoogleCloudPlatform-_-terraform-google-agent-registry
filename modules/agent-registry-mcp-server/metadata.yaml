@@ -57,7 +57,7 @@ spec:
         connections:
           - source:
               source: github.com/GoogleCloudPlatform/terraform-google-agent-registry//modules/agent-registry-service
-              version: ">= v0.0.8"
+              version: ">= 0.0.8"
             spec:
               outputExpr: discovery_filter
       - name: mcp_server_id

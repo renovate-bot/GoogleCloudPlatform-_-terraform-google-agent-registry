@@ -68,7 +68,7 @@ spec:
         connections:
           - source:
               source: github.com/GoogleCloudPlatform/terraform-google-agent-registry//modules/agent-registry-agent
-              version: ">= v0.0.8"
+              version: ">= 0.0.8"
             spec:
               outputExpr: agent_urn
       - name: target_identifier
@@ -78,17 +78,17 @@ spec:
         connections:
           - source:
               source: github.com/GoogleCloudPlatform/terraform-google-agent-registry//modules/agent-registry-agent
-              version: ">= v0.0.8"
+              version: ">= 0.0.8"
             spec:
               outputExpr: agent_urn
           - source:
               source: github.com/GoogleCloudPlatform/terraform-google-agent-registry//modules/agent-registry-mcp-server
-              version: ">= v0.0.8"
+              version: ">= 0.0.8"
             spec:
               outputExpr: mcp_server_urn
           - source:
               source: github.com/GoogleCloudPlatform/terraform-google-agent-registry//modules/agent-registry-endpoint
-              version: ">= v0.0.8"
+              version: ">= 0.0.8"
             spec:
               outputExpr: endpoint_urn
       - name: auth_provider
@@ -98,6 +98,7 @@ spec:
         connections:
           - source:
               source: github.com/GoogleCloudPlatform/terraform-google-iam-connectors-service
+              version: ">= 0.0.1"
             spec:
               outputExpr: id
     outputs:
