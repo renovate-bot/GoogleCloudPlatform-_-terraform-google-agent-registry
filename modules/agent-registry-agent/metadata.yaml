@@ -57,12 +57,12 @@ spec:
         connections:
           - source:
               source: github.com/GoogleCloudPlatform/terraform-google-agent-registry//modules/agent-registry-service
-              version: ">= v0.0.8"
+              version: ">= 0.0.8"
             spec:
               outputExpr: discovery_filter
           - source:
               source: github.com/GoogleCloudPlatform/terraform-google-vertex-ai//modules/agent-engine
-              version: ">= v4.0.1"
+              version: ">= 4.0.1"
             spec:
               outputExpr: discovery_filter
               inputPath: filter
