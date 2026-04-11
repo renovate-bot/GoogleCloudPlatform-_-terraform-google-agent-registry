@@ -8,6 +8,15 @@ and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 This changelog is generated automatically based on [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## [0.2.4](https://github.com/GoogleCloudPlatform/terraform-google-agent-registry/compare/v0.2.3...v0.2.4) (2026-04-11)
+
+
+### Bug Fixes
+
+* adding requred var ([0f96021](https://github.com/GoogleCloudPlatform/terraform-google-agent-registry/commit/0f960211bb1896f34c6008ae3400803b84b4ba72))
+* adding roles and services ([5bf2b70](https://github.com/GoogleCloudPlatform/terraform-google-agent-registry/commit/5bf2b705e2f04c93aa3d829b9d83e082beae1b87))
+* making default name required ([790037c](https://github.com/GoogleCloudPlatform/terraform-google-agent-registry/commit/790037c66d249d2548f91fb0595f5a870d9d9003))
+
 ## [0.2.3](https://github.com/GoogleCloudPlatform/terraform-google-agent-registry/compare/v0.2.2...v0.2.3) (2026-04-10)
 
 
