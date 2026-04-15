@@ -57,7 +57,7 @@ output "discovery_filter" {
   description = "A pre-formatted filter string for discovery modules."
   value       = "mcpServerId:\"urn:mcp:projects-${data.google_project.project.number}:projects:${data.google_project.project.number}:locations:${var.location}:agentregistry:services:${basename(google_agent_registry_service.this.id)}\""
 
-  depends_on  = [
+  depends_on = [
     google_agent_registry_service.default
   ]
 }
