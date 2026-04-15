@@ -41,7 +41,7 @@ output "mcp_server_attributes" {
 
 output "mcp_server_id" {
   description = "The unique identifier for the MCP server."
-  value       = coalesce(
+  value = coalesce(
     data.google_agent_registry_mcp_server.default.mcp_server_id,
     basename(data.google_agent_registry_mcp_server.default.id)
   )
