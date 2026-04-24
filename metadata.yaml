@@ -88,8 +88,4 @@ spec:
       - source: hashicorp/google-beta
         version: ">= 6.6.0, < 8"
       - source: hashicorp/google-nightly
-<<<<<<< main
         version: 2026.3.26-7.25.0
-=======
-        version: 0.2.10.25.0
->>>>>>> main
