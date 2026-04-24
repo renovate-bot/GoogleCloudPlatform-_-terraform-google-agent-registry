@@ -22,7 +22,7 @@ spec:
   info:
     title: terraform-google-agent-registry
     source:
-      repo: https://github.com/vandnagarggoogle/terraform-google-agent-registry.git
+      repo: https://github.com/GoogleCloudPlatform/terraform-google-agent-registry.git
       sourceType: git
   ui:
     input: {}
