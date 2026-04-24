@@ -75,6 +75,16 @@ spec:
       - name: agent_id
         description: The system-generated ID for a registered agent.
         varType: string
+      - name: module_depends_on
+        description: A list of external resources or modules that this module should depend on.
+        varType: list(string)
+        defaultValue: []
+        connections:
+        - source:
+            source: github.com/GoogleCloudPlatform/terraform-google-agent-registry//modules/agent-registry-service
+            version: ">= 0.0.8"
+          spec:
+            outputExpr: id
     outputs:
       - name: agent_display_name
         description: The display name of the Agent.

@@ -63,6 +63,16 @@ spec:
       - name: mcp_server_id
         description: The system-generated ID for an MCP server (e.g., agentregistry-0000...).
         varType: string
+      - name: module_depends_on
+        description: A list of external resources or modules that this module should depend on.
+        varType: list(string)
+        defaultValue: []
+        connections:
+          - source:
+              source: github.com/GoogleCloudPlatform/terraform-google-agent-registry//modules/agent-registry-service
+              version: ">= 0.0.8"
+            spec:
+              outputExpr: id
     outputs:
       - name: mcp_server_attributes
         description: Attributes associated with the MCP Server.

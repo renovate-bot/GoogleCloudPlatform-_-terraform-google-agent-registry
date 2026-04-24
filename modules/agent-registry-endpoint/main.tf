@@ -20,4 +20,5 @@ data "google_agent_registry_endpoint" "default" {
   location    = var.location
   endpoint_id = var.endpoint_id
   filter      = var.filter
+  depends_on  = [var.module_depends_on]
 }

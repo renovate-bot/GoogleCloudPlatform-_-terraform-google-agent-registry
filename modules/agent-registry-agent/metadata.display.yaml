@@ -37,6 +37,9 @@ spec:
         location:
           name: location
           title: Location
+        module_depends_on:
+          name: module_depends_on
+          title: Module Depends On
         project_id:
           name: project_id
           title: Project Id
