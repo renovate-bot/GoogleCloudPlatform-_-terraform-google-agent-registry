@@ -62,6 +62,16 @@ spec:
       - name: endpoint_id
         description: The system-generated ID for a generic endpoint.
         varType: string
+      - name: module_depends_on
+        description: A list of external resources or modules that this module should depend on.
+        varType: list(string)
+        defaultValue: []
+        connections:
+        - source:
+            source: github.com/GoogleCloudPlatform/terraform-google-agent-registry//modules/agent-registry-service
+            version: ">= 0.0.8"
+          spec:
+            outputExpr: id
     outputs:
       - name: endpoint_attributes
         description: Custom attributes associated with the endpoint.

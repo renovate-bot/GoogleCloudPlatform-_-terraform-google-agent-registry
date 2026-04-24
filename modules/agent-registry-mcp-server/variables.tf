@@ -36,3 +36,9 @@ variable "mcp_server_id" {
   type        = string
   default     = null
 }
+
+variable "module_depends_on" {
+  description = "A list of external resources or modules that this module should depend on."
+  type        = list(string)
+  default     = []
+}

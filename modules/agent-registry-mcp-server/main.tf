@@ -20,4 +20,5 @@ data "google_agent_registry_mcp_server" "default" {
   location      = var.location
   mcp_server_id = var.mcp_server_id
   filter        = var.filter
+  depends_on    = [var.module_depends_on]
 }

@@ -37,6 +37,9 @@ spec:
         mcp_server_id:
           name: mcp_server_id
           title: Mcp Server Id
+        module_depends_on:
+          name: module_depends_on
+          title: Module Depends On
         project_id:
           name: project_id
           title: Project Id

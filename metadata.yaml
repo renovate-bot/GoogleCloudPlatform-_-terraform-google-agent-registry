@@ -49,6 +49,8 @@ spec:
     subBlueprints:
       - name: agent-registry-agent
         location: modules/agent-registry-agent
+      - name: agent-registry-binding
+        location: modules/agent-registry-binding
       - name: agent-registry-endpoint
         location: modules/agent-registry-endpoint
       - name: agent-registry-mcp-server
@@ -75,14 +77,11 @@ spec:
           - roles/networkservices.admin
           - roles/networksecurity.admin
           - roles/serviceusage.serviceUsageAdmin
-    services:
-      - cloudresourcemanager.googleapis.com
-      - storage-api.googleapis.com
-      - serviceusage.googleapis.com
+          - roles/apphub.admin
     providerVersions:
       - source: hashicorp/google
         version: ">= 6.6.0, < 8"
       - source: hashicorp/google-beta
         version: ">= 6.6.0, < 8"
       - source: hashicorp/google-nightly
-        version: 0.2.3.25.0
+        version: 2026.3.26-7.25.0
