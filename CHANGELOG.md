@@ -8,6 +8,14 @@ and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 This changelog is generated automatically based on [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## [0.3.0](https://github.com/GoogleCloudPlatform/terraform-google-agent-registry/compare/v0.2.10...v0.3.0) (2026-04-24)
+
+
+### Features
+
+* adding dependcy with service ([469f6dd](https://github.com/GoogleCloudPlatform/terraform-google-agent-registry/commit/469f6dd2d2917983c3085814a76095df228df195))
+* adding dependcy with service" ([00c5a13](https://github.com/GoogleCloudPlatform/terraform-google-agent-registry/commit/00c5a13cfa35a7016273105d87a879217bfa190e))
+
 ## [0.2.10](https://github.com/GoogleCloudPlatform/terraform-google-agent-registry/compare/v0.2.9...v0.2.10) (2026-04-16)
 
 
