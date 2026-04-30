@@ -55,7 +55,14 @@ output "display_name" {
 
 output "discovery_filter" {
   description = "A pre-formatted filter string for discovery modules."
-  value       = "mcpServerId:\"urn:mcp:projects-${data.google_project.project.number}:projects:${data.google_project.project.number}:locations:${var.location}:agentregistry:services:${basename(google_agent_registry_service.this.id)}\""
+  value = format("%s:\"urn:%s:projects-%s:projects:%s:locations:%s:agentregistry:services:%s\"",
+    length(google_agent_registry_service.this.agent_spec) > 0 ? "agentId" : (length(google_agent_registry_service.this.mcp_server_spec) > 0 ? "mcpServerId" : "endpointId"),
+    length(google_agent_registry_service.this.agent_spec) > 0 ? "agent" : (length(google_agent_registry_service.this.mcp_server_spec) > 0 ? "mcp" : "endpoint"),
+    data.google_project.project.number,
+    data.google_project.project.number,
+    var.location,
+    basename(google_agent_registry_service.this.id)
+  )
 
   depends_on = [
     google_agent_registry_service.this
