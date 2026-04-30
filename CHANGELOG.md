@@ -8,6 +8,14 @@ and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 This changelog is generated automatically based on [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## [0.3.2](https://github.com/GoogleCloudPlatform/terraform-google-agent-registry/compare/v0.3.1...v0.3.2) (2026-04-30)
+
+
+### Bug Fixes
+
+* adding endpoint , mcp ([7ee9809](https://github.com/GoogleCloudPlatform/terraform-google-agent-registry/commit/7ee980956356e2d6b4a3e971bc28dcc01f0d836e))
+* filter value ([4ba660e](https://github.com/GoogleCloudPlatform/terraform-google-agent-registry/commit/4ba660ebe079fa093e950ed8410421d807baf2f6))
+
 ## [0.3.1](https://github.com/GoogleCloudPlatform/terraform-google-agent-registry/compare/v0.3.0...v0.3.1) (2026-04-24)
 
 
