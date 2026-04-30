@@ -68,4 +68,3 @@ output "discovery_filter" {
     google_agent_registry_service.this
   ]
 }
-
