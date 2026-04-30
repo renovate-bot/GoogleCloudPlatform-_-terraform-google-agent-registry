@@ -80,12 +80,12 @@ spec:
         varType: list(string)
         defaultValue: []
         connections:
-        - source:
-            source: github.com/GoogleCloudPlatform/terraform-google-agent-registry//modules/agent-registry-service
-            version: ">= 0.0.8"
-          spec:
+          - source:
+              source: github.com/GoogleCloudPlatform/terraform-google-agent-registry//modules/agent-registry-service
+              version: ">= 0.0.8"
+            spec:
             outputExpr: "[id]"
-        - source:
+          - source:
               source: github.com/GoogleCloudPlatform/terraform-google-vertex-ai//modules/agent-engine
               version: ">= 4.0.1"
             spec:
