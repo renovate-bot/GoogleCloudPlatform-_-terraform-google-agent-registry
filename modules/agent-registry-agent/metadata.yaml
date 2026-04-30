@@ -89,12 +89,12 @@ spec:
               source: github.com/GoogleCloudPlatform/terraform-google-vertex-ai//modules/agent-engine
               version: ">= 4.0.1"
             spec:
-              outputExpr: reasoning_engine_id
+              outputExpr: "[reasoning_engine_id]"
           - source:
               source: github.com/GoogleCloudPlatform/terraform-google-vertex-ai//modules/agent-engine-nightly
               version: ">= 5.1.0"
             spec:
-              outputExpr: reasoning_engine_id
+              outputExpr: "[reasoning_engine_id]"
     outputs:
       - name: agent_display_name
         description: The display name of the Agent.
